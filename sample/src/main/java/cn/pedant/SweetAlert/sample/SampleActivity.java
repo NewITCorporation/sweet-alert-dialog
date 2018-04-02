@@ -63,13 +63,13 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 SweetAlertDialog sd2 = new SweetAlertDialog(this);
                 sd2.setCancelable(true);
                 sd2.setCanceledOnTouchOutside(true);
-                sd2.setContentText("Here's a message");
+                sd2.setContentText("Here's a message Here's a message Here's a message Here's a message Here's a message Here's a message Here's a message Here's a message");
                 sd2.hideConfirmButton();
                 sd2.show();
                 break;
             case R.id.under_text_test:
                 new SweetAlertDialog(this)
-                        .setTitleText("Title")
+                        .setTitleText("Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title")
                         .setContentText("It's pretty, isn't it?")
                         .show();
                 break;
