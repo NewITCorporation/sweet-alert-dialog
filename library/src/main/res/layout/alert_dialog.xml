@@ -179,7 +179,6 @@
                 android:maxLines="10"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="content"
                 android:textAlignment="center"
                 android:textColor="@color/text_color"
                 android:textSize="16sp"
@@ -191,89 +190,44 @@
                 android:id="@+id/buttons_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 wheel:layout_constraintBottom_toBottomOf="parent"
                 wheel:layout_constraintEnd_toEndOf="parent"
                 wheel:layout_constraintStart_toStartOf="parent"
                 wheel:layout_constraintTop_toBottomOf="@+id/content_text">
 
-                <TableRow
-                    android:id="@+id/tableRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/cancel_button"
+                    style="@style/dialog_blue_button"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/red_button_background"
+                    android:text="Cancel" />
 
-                    <Button
-                        android:id="@+id/cancel_button"
-                        style="@style/dialog_blue_button"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="0.5"
-                        android:background="@drawable/red_button_background"
-                        tools:text="cancel" />
+                <Button
+                    android:id="@+id/neutral_button"
+                    style="@style/dialog_blue_button"
+                    android:layout_width="0dp"
+                    android:background="@drawable/gray_button_background"
+                    android:visibility="gone"
+                    tools:text="neutral" />
 
-                    <Button
-                        android:id="@+id/neutral_button"
-                        style="@style/dialog_blue_button"
-                        android:layout_width="0dp"
-                        android:background="@drawable/gray_button_background"
-                        android:visibility="gone"
-                        tools:text="neutral" />
-
-                    <Button
-                        android:id="@+id/confirm_button"
-                        style="@style/dialog_blue_button"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="0.5"
-                        android:text="Ok"
-                        android:visibility="visible" />
-
-                </TableRow>
+                <Button
+                    android:id="@+id/confirm_button"
+                    style="@style/dialog_blue_button"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="0.5"
+                    android:text="Ok" />
 
             </LinearLayout>
 
 
         </android.support.constraint.ConstraintLayout>
-
-
-        <!--<LinearLayout-->
-        <!--android:id="@+id/buttons_container"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:paddingBottom="4dp"-->
-        <!--android:paddingTop="10dp"-->
-        <!--android:visibility="visible"-->
-        <!--android:gravity="center">-->
-
-        <!--<Button-->
-        <!--android:id="@+id/cancel_button"-->
-        <!--style="@style/dialog_blue_button"-->
-        <!--android:layout_marginRight="25dp"-->
-        <!--android:background="@drawable/red_button_background"-->
-        <!--android:visibility="gone"-->
-        <!--tools:text="cancel"-->
-        <!--tools:visibility="visible" />-->
-
-        <!--<Button-->
-        <!--android:id="@+id/neutral_button"-->
-        <!--style="@style/dialog_blue_button"-->
-        <!--android:layout_marginLeft="-10dp"-->
-        <!--android:layout_marginRight="10dp"-->
-        <!--android:background="@drawable/gray_button_background"-->
-        <!--android:visibility="gone"-->
-        <!--tools:text="neutral"-->
-        <!--tools:visibility="gone" />-->
-
-        <!--<Button-->
-        <!--android:id="@+id/confirm_button"-->
-        <!--style="@style/dialog_blue_button"-->
-        <!--android:visibility="gone"-->
-        <!--android:text="Ok" />-->
-        <!--</LinearLayout>-->
-
 
     </LinearLayout>
 </FrameLayout>
