@@ -70,7 +70,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             case R.id.under_text_test:
                 new SweetAlertDialog(this)
                         .setTitleText("Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title")
-                        .setContentText("It's pretty, isn't it?")
+                      //  .setContentText("It's pretty, isn't it?")
                         .show();
                 break;
             case R.id.error_text_test:
