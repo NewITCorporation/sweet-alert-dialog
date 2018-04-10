@@ -1,6 +1,10 @@
 forked from f0ris
-                                  1. fix bug content text multi-line
-                                  2. fix bug button ok and cancel remove margin when one of it is hidden
-                                  3. fix bug custom view height dynamically
-                                  4. remove neutral button 
-                                  5. rearrange layout padding/margin
+
+
+fix incorrect margin button when one of it is hidden
+fixed dialog width by 80% of screen size
+fixed button width by 50% of dialog size
+no longer support neutral button
+no longer support progress color
+every view visibility by default is gone (no hide command)
+upgrade gradle version and targetsdk = 27

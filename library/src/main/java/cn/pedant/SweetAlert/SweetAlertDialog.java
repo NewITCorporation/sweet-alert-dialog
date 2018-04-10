@@ -317,6 +317,10 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
             }
         }
     }
+
+    public ProgressHelper getProgressHelper() {
+        return mProgressHelper;
+    }
 }
 
 
