@@ -26,7 +26,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.warning_cancel_test).setOnClickListener(this);
         findViewById(R.id.custom_img_test).setOnClickListener(this);
         findViewById(R.id.progress_dialog).setOnClickListener(this);
-     //   findViewById(R.id.neutral_btn_test).setOnClickListener(this);
+        //   findViewById(R.id.neutral_btn_test).setOnClickListener(this);
         findViewById(R.id.disabled_btn_test).setOnClickListener(this);
         findViewById(R.id.dark_style).setOnClickListener(this);
         findViewById(R.id.custom_view_test).setOnClickListener(this);
@@ -40,7 +40,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.warning_cancel_test).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
         findViewById(R.id.custom_img_test).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
         findViewById(R.id.progress_dialog).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
-       // findViewById(R.id.neutral_btn_test).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
+        // findViewById(R.id.neutral_btn_test).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
         findViewById(R.id.disabled_btn_test).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
         findViewById(R.id.custom_view_test).setOnTouchListener(Constants.FOCUS_TOUCH_LISTENER);
     }
@@ -51,14 +51,12 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             case R.id.basic_test:
                 SweetAlertDialog sd = new SweetAlertDialog(this);
                 sd.setCancelable(true);
-                sd.setCanceledOnTouchOutside(true);
                 sd.setContentText("Here's a message");
                 sd.show();
                 break;
             case R.id.basic_test_without_buttons:
                 SweetAlertDialog sd2 = new SweetAlertDialog(this);
                 sd2.setCancelable(true);
-                sd2.setCanceledOnTouchOutside(true);
                 sd2.setContentText("Here's a message Here's a message Here's a message Here's a message Here's a message Here's a message Here's a message Here's a message");
                 sd2.show();
                 break;
@@ -87,6 +85,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                         .setCancelButton("Yes,delete it!", new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismiss();
                             }
                         })
                         .show();
@@ -95,20 +94,17 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                         .setTitleText("Are you sure?")
                         .setContentText("Won't be able to recover this file!")
-                        .setCancelText("No,cancel plx!")
-                        .setConfirmText("Yes,delete it!")
-                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        .setCancelButton("No,cancel plx!", new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 sDialog.dismiss();
                                 new SweetAlertDialog(SampleActivity.this, SweetAlertDialog.ERROR_TYPE)
                                         .setTitleText("Cancelled!")
                                         .setContentText("Your imaginary file is safe :)")
-                                        .setConfirmText("OK")
                                         .show();
                             }
                         })
-                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        .setConfirmButton("Yes,delete it!", new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 sDialog.dismiss();
@@ -180,8 +176,18 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 final SweetAlertDialog disabledBtnDialog = new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
                         .setTitleText("Title")
                         .setContentText("Disabled button dialog")
-                        .setConfirmText("Confirm")
-                        .setCancelText("Cancel");
+                        .setConfirmButton("Confirm", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismiss();
+                            }
+                        })
+                        .setCancelButton("Cancel", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismiss();
+                            }
+                        });
 
                 disabledBtnDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                     @Override
@@ -224,8 +230,19 @@ public class SampleActivity extends Activity implements View.OnClickListener {
 
                 SweetAlertDialog dialog = new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
                         .setTitleText("Custom view")
-                        .setCancelText("cancel")
-                        .setConfirmText("okey");
+                        .setConfirmButton("Confirm", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismiss();
+                            }
+                        })
+                        .setCancelButton("Cancel", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismiss();
+                            }
+                        });
+
 
                 dialog.setCustomView(view);
                 dialog.show();

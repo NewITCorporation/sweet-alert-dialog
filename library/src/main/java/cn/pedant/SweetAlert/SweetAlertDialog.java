@@ -154,8 +154,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         setTitleText(mTitleText);
         setContentText(mContentText);
         setCustomView(mCustomView);
-        setCancelText(mCancelText);
-        setConfirmText(mConfirmText);
+        setConfirmButton(mConfirmText, mConfirmClickListener);
+        setCancelButton(mCancelText, mCancelClickListener);
 
         switch (mAlertType) {
             case ERROR_TYPE:
@@ -185,7 +185,6 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         params.width = (int) (width * 0.8);
         root.setLayoutParams(params);
     }
-
 
     protected void onStart() {
         mDialogView.startAnimation(mModalInAnim);
@@ -254,44 +253,24 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         void onClick(SweetAlertDialog sweetAlertDialog);
     }
 
-    public SweetAlertDialog setCancelText(String text) {
+    public SweetAlertDialog setCancelButton(String text, OnSweetClickListener listener) {
         mCancelText = text;
         if (mCancelButton != null && !TextUtils.isEmpty(mCancelText)) {
             mCancelButton.setText(mCancelText);
             mCancelButton.setVisibility(View.VISIBLE);
             mButtonsContainer.setVisibility(View.VISIBLE);
         }
-        return this;
-    }
-
-    public SweetAlertDialog setCancelButton(String text, OnSweetClickListener listener) {
-        this.setCancelText(text);
-        this.setCancelClickListener(listener);
-        return this;
-    }
-
-    public SweetAlertDialog setCancelClickListener(OnSweetClickListener listener) {
         mCancelClickListener = listener;
         return this;
     }
 
-    public SweetAlertDialog setConfirmText(String text) {
+    public SweetAlertDialog setConfirmButton(String text, OnSweetClickListener listener) {
         mConfirmText = text;
         if (mConfirmButton != null && !TextUtils.isEmpty(mConfirmText)) {
             mConfirmButton.setText(mConfirmText);
             mConfirmButton.setVisibility(View.VISIBLE);
             mButtonsContainer.setVisibility(View.VISIBLE);
         }
-        return this;
-    }
-
-    public SweetAlertDialog setConfirmButton(String text, OnSweetClickListener listener) {
-        this.setConfirmText(text);
-        this.setConfirmClickListener(listener);
-        return this;
-    }
-
-    public SweetAlertDialog setConfirmClickListener(OnSweetClickListener listener) {
         mConfirmClickListener = listener;
         return this;
     }
