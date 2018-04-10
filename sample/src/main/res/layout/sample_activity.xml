@@ -137,16 +137,16 @@
                 android:layout_margin="10dp"
                 android:text="Try me!" />
 
-            <TextView
-                android:id="@+id/txt_8"
-                style="@style/description_style"
-                android:text="A message with neutral button" />
+            <!--<TextView-->
+                <!--android:id="@+id/txt_8"-->
+                <!--style="@style/description_style"-->
+                <!--android:text="A message with neutral button" />-->
 
-            <Button
-                android:id="@+id/neutral_btn_test"
-                style="@style/dialog_blue_button"
-                android:layout_margin="10dp"
-                android:text="Try me!" />
+            <!--<Button-->
+                <!--android:id="@+id/neutral_btn_test"-->
+                <!--style="@style/dialog_blue_button"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Try me!" />-->
 
             <TextView
                 android:id="@+id/txt_9"
